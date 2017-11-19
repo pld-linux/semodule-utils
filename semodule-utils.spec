@@ -50,7 +50,8 @@ Ten pakiet zawiera narzędzia do tworzenia modułów polityk SELinuksa.
 CFLAGS="%{rpmcflags} %{rpmcppflags}" \
 %{__make} \
 	CC="%{__cc}" \
-	LDFLAGS="%{rpmldflags}"
+	LDFLAGS="%{rpmldflags}" \
+	LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
