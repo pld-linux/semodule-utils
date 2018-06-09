@@ -1,16 +1,16 @@
 Summary:	SELinux developer tools for policy module packages
 Summary(pl.UTF-8):	Narzędzia do tworzenia modułów polityk SELinuksa
 Name:		semodule-utils
-Version:	2.7
+Version:	2.8
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
-Source0:	https://raw.githubusercontent.com/wiki/SELinuxProject/selinux/files/releases/20170804/%{name}-%{version}.tar.gz
-# Source0-md5:	678e3a5225f9645d40fd9d13bbaa156f
+Source0:	https://raw.githubusercontent.com/wiki/SELinuxProject/selinux/files/releases/20180524/%{name}-%{version}.tar.gz
+# Source0-md5:	51c69e612481ce971e2ae825139d2ca0
 URL:		https://github.com/SELinuxProject/selinux/wiki
-BuildRequires:	libsepol-static >= 2.7
-Requires:	libsepol >= 2.7
+BuildRequires:	libsepol-static >= 2.8
+Requires:	libsepol >= 2.8
 Conflicts:	policycoreutils < 2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,20 +57,17 @@ CFLAGS="%{rpmcflags} %{rpmcppflags}" \
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	LIBSEPOLA=%{_libdir}/libsepol.a
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/semodule_deps
 %attr(755,root,root) %{_bindir}/semodule_expand
 %attr(755,root,root) %{_bindir}/semodule_link
 %attr(755,root,root) %{_bindir}/semodule_package
 %attr(755,root,root) %{_bindir}/semodule_unpackage
-%{_mandir}/man8/semodule_deps.8*
 %{_mandir}/man8/semodule_expand.8*
 %{_mandir}/man8/semodule_link.8*
 %{_mandir}/man8/semodule_package.8*
