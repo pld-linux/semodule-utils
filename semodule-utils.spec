@@ -1,16 +1,16 @@
 Summary:	SELinux developer tools for policy module packages
 Summary(pl.UTF-8):	Narzędzia do tworzenia modułów polityk SELinuksa
 Name:		semodule-utils
-Version:	2.8
+Version:	2.9
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
-Source0:	https://raw.githubusercontent.com/wiki/SELinuxProject/selinux/files/releases/20180524/%{name}-%{version}.tar.gz
-# Source0-md5:	51c69e612481ce971e2ae825139d2ca0
+Source0:	https://github.com/SELinuxProject/selinux/releases/download/20190315/%{name}-%{version}.tar.gz
+# Source0-md5:	9e7e6afe33459cae2de5360e97f1e702
 URL:		https://github.com/SELinuxProject/selinux/wiki
-BuildRequires:	libsepol-static >= 2.8
-Requires:	libsepol >= 2.8
+BuildRequires:	libsepol-static >= 2.9
+Requires:	libsepol >= 2.9
 Conflicts:	policycoreutils < 2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -72,3 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/semodule_link.8*
 %{_mandir}/man8/semodule_package.8*
 %{_mandir}/man8/semodule_unpackage.8*
+%lang(ru) %{_mandir}/ru/man8/semodule_expand.8*
+%lang(ru) %{_mandir}/ru/man8/semodule_link.8*
+%lang(ru) %{_mandir}/ru/man8/semodule_package.8*
+%lang(ru) %{_mandir}/ru/man8/semodule_unpackage.8*
