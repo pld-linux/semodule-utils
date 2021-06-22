@@ -1,16 +1,16 @@
 Summary:	SELinux developer tools for policy module packages
 Summary(pl.UTF-8):	Narzędzia do tworzenia modułów polityk SELinuksa
 Name:		semodule-utils
-Version:	2.9
+Version:	3.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
-Source0:	https://github.com/SELinuxProject/selinux/releases/download/20190315/%{name}-%{version}.tar.gz
-# Source0-md5:	9e7e6afe33459cae2de5360e97f1e702
+Source0:	https://github.com/SELinuxProject/selinux/releases/download/20200710/%{name}-%{version}.tar.gz
+# Source0-md5:	d9520d0cdef3d1be412155dc72ec2936
 URL:		https://github.com/SELinuxProject/selinux/wiki
-BuildRequires:	libsepol-static >= 2.9
-Requires:	libsepol >= 2.9
+BuildRequires:	libsepol-devel >= 3.1
+Requires:	libsepol >= 3.1
 Conflicts:	policycoreutils < 2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
